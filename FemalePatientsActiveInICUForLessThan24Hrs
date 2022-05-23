@@ -1,0 +1,6 @@
+select DISTINCT icu.subject_id
+from `physionet-data.mimic_icu.icustays` as icu 
+left join `physionet-data.mimic_core.patients` as pat
+on pat.subject_id = icu.subject_id
+where gender = "F"
+and icu.los < 1
