@@ -2,5 +2,5 @@ select DISTINCT icu.subject_id
 from `physionet-data.mimic_icu.icustays` as icu 
 left join `physionet-data.mimic_derived.icustay_detail` as pat
 on pat.subject_id = icu.subject_id
-where gender = "F"
+where pat.gender = "F"
 and icu.los < 1
